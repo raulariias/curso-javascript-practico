@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CP Frontend Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables */
+        :root{
+            --veryLightPink: #c7c7c7;
+            --textInputField: #f7f7f7;
+            --hospitalGreen: #acd9b2;
+            --white: #ffffff;
+            --black: #000000;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.6rem;
+        }
+        nav{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0 3rem;
+            height: 6rem;
+            border-bottom: 1px solid var(--veryLightPink);
+        }
+        .menu{
+            display: none;
+        }
+        .navbarLeft{
+            display: flex;
+            margin-left: 1.5rem;
+        }
+        .navbarLeft ul{
+            margin-left: 2rem;
+        }
+        .logo{
+            width: 10rem;
+        }
+        .navbarLeft ul, .navbarRight ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .navbarLeft ul li a, .navbarRight ul li a{
+            text-decoration: none;
+            color: var(--veryLightPink);
+            border: 1px solid var(--white);
+            padding: 1rem;
+            border-radius: 0.6rem;
+        }
+        .navbarLeft ul li a:hover, .navbarRight ul li a:hover{
+            text-decoration: none;
+            color: var(--hospitalGreen);
+            border: 1px solid var(--hospitalGreen);
+        }
+        .navbarRight{
+            display: flex;
+            margin-right: 2rem;
+        }
+        .navbarEmail{
+            color: var(--veryLightPink);
+            font-size: var(--sm);
+            margin-right: 3rem;
+        }
+        .navbarShoppingCart{
+            position: relative;
+        }
+        .navbarShoppingCart div {
+            width: 1.6rem;
+            height: 1.6rem;
+            background-color: var(--hospitalGreen);
+            border-radius: 50%;
+            font-size: var(--sm);
+            font-weight: bold;
+            position: absolute;
+            top: -0.7rem;
+            right: -0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (max-width: 640px) {
+            .menu {
+                display: block;
+                width: 2.5rem;
+            }
+            nav {
+                padding: 1rem;
+            }
+            .navbarLeft ul {
+                display: none;
+            }
+            .navbarRight {
+                margin-right: 0;
+            }
+            .navbarRight .navbarEmail {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="./assets/Icons/icon_menu.svg" alt="menu" class="menu">
+
+        <div class="navbarLeft">
+            <img src="./assets/Logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <ul>
+                <li><a href="/">All</a></li>
+                <li><a href="/">Clothes</a></li>
+                <li><a href="/">Electronics</a></li>
+                <li><a href="/">Furniture</a></li>
+                <li><a href="/">Toys</a></li>
+                <li><a href="/">Others</a></li>
+            </ul>
+        </div>
+
+        <div class="navbarRight">
+            <ul>
+                <li class="navbarEmail">correo@example.com</li>
+                <li class="navbarShoppingCart">
+                    <img src="./assets/Icons/icon_shopping_cart.svg" alt="Shopping Cart">
+                    <div>2</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

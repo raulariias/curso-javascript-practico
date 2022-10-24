@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --veryLightPink: #c7c7c7;
+            --textInputField: #f7f7f7;
+            --hospitalGreen: #acd9b2;
+            --white: #ffffff;
+            --black: #000000;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.6rem;
+        }
+        .login{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .formContainer{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 30rem;
+        }
+        .title{
+            font-size: var(--lg);
+            margin-bottom: 4.5rem;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+        }
+        .form div{
+            display: flex;
+            flex-direction: column;
+        }
+        .label{
+            font-size: var(--sm);
+            font-weight: bold;
+            margin-bottom: 0.4rem;
+        }
+        .input{
+            background-color: var(--textInputField);
+            border: none;
+            border-radius: 0.2rem;
+            height: 3rem;
+            font-size: var(--md);
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border-radius: 1rem;
+        }
+        .input-name, .input-email, .input-password{
+            margin-bottom: 2.5rem;
+        }
+        .primaryButton{
+            background-color: var(--hospitalGreen);
+            border-radius: 0.8rem;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            height: 5rem;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+        }
+        .logginButton{
+            margin-top: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: 640px) {
+            .formContainer{
+                height: 100%;
+            }
+            .form {
+                height: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login">
+        <div class="formContainer">
+            <h1 class="title">Create a new account</h1>
+
+            <form action="/" class="form">
+                <div>
+                    <label for="name" class="label">Name</label>
+                    <input type="text" class="input input-name" id="name" placeholder="Vanesa Castro">
+
+                    <label for="email" class="label">Email address</label>
+                    <input type="text" class="input input-email" id="email" placeholder="dyproducts@example.com">
+
+                    <label for="repeatPassword" class="label">Repeat password</label>
+                    <input type="password" class="input input-password" id="repeatPassword" placeholder="********">
+                </div>
+
+                <input type="submit" value="Create" class="primaryButton logginButton">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

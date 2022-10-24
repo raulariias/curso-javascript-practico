@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CP Frontend Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables */
+        :root{
+            --veryLightPink: #c7c7c7;
+            --textInputField: #f7f7f7;
+            --hospitalGreen: #acd9b2;
+            --white: #ffffff;
+            --black: #000000;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.6rem;
+        }
+        .productDetails{
+            width: 36rem;
+            padding-bottom: 2.5rem;
+            position: absolute;
+            right: 0;
+        }
+        .primaryButton{
+            background-color: var(--hospitalGreen);
+            border-radius: 0.8rem;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            height: 5rem;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+        }
+        .addToCartButton{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5rem;
+        }
+        .productDetails .producDetails__close{
+            background-color: var(--white);
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            top: 1.2rem;
+            left: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        .productDetails .producDetails__close:hover{
+            cursor: pointer;
+        }
+        .productDetails > .producDetails__img {
+            width: 100%;
+            height: 36rem;
+            object-fit: cover;
+            border-radius: 0 0 10rem 0;
+        }
+        .productInfo{
+            margin: 0 2rem;
+        }
+        .productInfo p:nth-child(1){
+            font-weight: bold;
+            font-size: var(--md);
+            margin: 2.5rem 0 0.5rem 0;
+        }
+        .productInfo p:nth-child(2){
+            font-weight: 500;
+            font-size: var(--md);
+            color: var(--veryLightPink);
+            margin: 0 0 2rem 0;
+        }
+        .productInfo p:nth-child(3){
+            font-weight: 300;
+            font-size: var(--sm);
+            margin: 0 0 1rem 0;
+            color: var(--black);
+        }
+        @media (max-width: 640px){
+            .productDetails {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <aside class="productDetails">
+        <div class="producDetails__close">
+            <img src="./assets/Icons/icon_close.png" alt="Close">
+        </div>
+        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike" class="producDetails__img">
+        <div class="productInfo">
+            <p>$120,00</p>
+            <p>Bike</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, consectetur quis. Vitae, reprehenderit. Animi, ducimus molestias expedita rem doloremque autem repellat magni inventore soluta, ratione totam deleniti mollitia? Consequatur, quo.</p>
+            <button class="primaryButton addToCartButton"><img src="./assets/Icons/bt_add_to_cart.svg" alt="Add to cart">Add to cart</button>
+        </div>
+    </aside>
+</body>
+</html>

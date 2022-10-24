@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CP Frontend Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables */
+        :root{
+            --veryLightPink: #c7c7c7;
+            --textInputField: #f7f7f7;
+            --hospitalGreen: #acd9b2;
+            --white: #ffffff;
+            --black: #000000;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.6rem;
+        }
+        .desktopMenu{
+            width: 10rem;
+            height: auto;
+            border: 1px solid var(--veryLightPink);
+            border-radius: 1rem;
+            padding: 2rem 2rem 0 2rem;
+        }
+        .desktopMenu ul{
+            list-style: none;
+        }
+        .desktopMenu ul li{
+            text-align: end;
+        }
+        .desktopMenu ul li:last-child{
+            padding-top: 2rem;
+            border-top: 1px solid var(--veryLightPink);
+        }
+        .desktopMenu ul li:last-child a{
+            color: var(--hospitalGreen);
+            font-size: var(--sm);
+        }
+        .desktopMenu ul li a{
+            color: var(--black);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+        .desktopMenu ul li:nth-child(1),.desktopMenu ul li:nth-child(2){
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="desktopMenu">
+        <ul>
+            <li><a href="/" class="title">My orders</a></li>
+            <li><a href="/">My account</a></li>
+            <li><a href="/">Sign out</a></li>
+        </ul>
+    </div>
+</body>
+</html>
