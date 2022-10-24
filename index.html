@@ -5,40 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CP Frontend Developer</title>
+    <title>CP JavaScript</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 
-    <style>
-        /* Variables */
-        :root{
-            --veryLightPink: #c7c7c7;
-            --textInputField: #f7f7f7;
-            --hospitalGreen: #acd9b2;
-            --white: #ffffff;
-            --black: #000000;
-            --sm: 1.4rem;
-            --md: 1.6rem;
-            --lg: 1.8rem;
-        }
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html{
-            font-size: 62.5%;
-        }
-        body{
-            font-family: 'Quicksand', sans-serif;
-            font-size: 1.6rem;
-        }
-    </style>
+    <!--- CSS -->
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
+    <nav>
+        <img src="./assets/Icons/icon_menu.svg" alt="menu" class="menu">
+
+        <div class="navbarLeft">
+            <img src="./assets/Logos/logo_yard_sale.svg" alt="logo" class="logo">
+            <ul>
+                <li><a href="/">All</a></li>
+                <li><a href="/">Clothes</a></li>
+                <li><a href="/">Electronics</a></li>
+                <li><a href="/">Furniture</a></li>
+                <li><a href="/">Toys</a></li>
+                <li><a href="/">Others</a></li>
+            </ul>
+        </div>
+
+        <div class="navbarRight">
+            <ul>
+                <li class="navbarEmail">correo@example.com</li>
+                <li class="navbarShoppingCart">
+                    <img src="./assets/Icons/icon_shopping_cart.svg" alt="Shopping Cart">
+                    <div>2</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="desktopMenu inactive">
+            <ul>
+                <li><a href="/" class="title">My orders</a></li>
+                <li><a href="/">My account</a></li>
+                <li><a href="/">Sign out</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="./main.js"></script>
 </body>
 </html>
