@@ -36,7 +36,7 @@ nav{
     height: 6rem;
     border-bottom: 1px solid var(--veryLightPink);
 }
-.menu{
+.burgerMenu{
     display: none;
 }
 .navbarLeft{
@@ -136,8 +136,48 @@ nav{
 }
 
 
+
+
+/******* Mobile menu *******/
+.mobileMenu{
+    padding: 2.4rem;
+    position: absolute;
+    top: 6rem;
+    }
+.mobileMenu a{
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    }
+.mobileMenu ul{
+    list-style: none;
+    margin-top: 2.5rem;
+    }
+.mobileMenu ul:nth-child(1){
+    border-bottom: 1px solid var(--veryLightPink);
+    }
+.mobileMenu ul li{
+    margin-bottom: 2.5rem;
+    }
+.mobileMenu .email{
+    font-size: var(--sm);
+    font-weight: 300;
+    }
+.mobileMenu .signOut{
+    color: var(--hospitalGreen);
+    font-size: var(--sm);
+    }
+
+
+@media (min-width: 641px) {
+    .mobileMenu {
+        display: none;
+    }
+}
+
+
 @media (max-width: 640px) {
-    .menu {
+    .burgerMenu {
         display: block;
         width: 2.5rem;
     }
@@ -151,6 +191,9 @@ nav{
         margin-right: 0;
     }
     .navbarRight .navbarEmail {
+        display: none;
+    }
+    .desktopMenu {
         display: none;
     }
 }
