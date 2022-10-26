@@ -21,9 +21,6 @@ body{
     font-family: 'Quicksand', sans-serif;
     font-size: 1.6rem;
 }
-.inactive{
-    display: none;
-}
 
 
 
@@ -81,6 +78,9 @@ nav{
 }
 .navbarShoppingCart{
     position: relative;
+}
+.navbarShoppingCart:hover{
+    cursor: pointer;
 }
 .navbarShoppingCart div {
     width: 1.6rem;
@@ -140,6 +140,7 @@ nav{
 
 /******* Mobile menu *******/
 .mobileMenu{
+    background-color: var(--white);
     padding: 2.4rem;
     position: absolute;
     top: 6rem;
@@ -169,6 +170,97 @@ nav{
     }
 
 
+/****** Aside, Shopping Cart ******/
+.productDetails{
+    background-color: var(--white);
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    width: 36rem;
+    height: 75vh;
+    position: absolute;
+    right: 0;
+}
+.primaryButton{
+    background-color: var(--hospitalGreen);
+    border-radius: 0.8rem;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    height: 5rem;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+}
+.myOrderContent, .orderContainer, .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+}
+.shoppingCard{
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1.6rem;
+    margin-bottom: 1rem;
+    margin-right: 0.8rem;
+    align-items: center;
+}
+.shoppingCard figure img{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+.shoppingCard p:nth-child(2){
+    color: var(--veryLightPink);
+}
+.shoppingCard p:nth-child(3){
+    font-size: var(--md);
+    font-weight: bold;
+}
+.shoppingCard > img:hover{
+    cursor: pointer;
+}
+.orderContainer {
+    margin-top: 2rem;
+}
+.order{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.6rem;
+    align-items: center;
+    background-color: var(--textInputField);
+    padding: 1.6rem;
+    margin-bottom: 2.4rem;
+    border-radius: 1rem;
+}
+.order p span:nth-child(1){
+    font-size: var(--md);
+    font-weight: bold;
+}
+.order p:nth-child(2){
+    text-align: end;
+    font-weight: bold;
+}
+.title{
+    display: flex;
+    margin: 1rem 2rem;
+}
+.title img {
+    transform: rotate(180deg);
+    width: 0.8rem;
+    margin-right: 2rem;
+}
+.title img:hover {
+    cursor: pointer;
+}
+.title p {
+    font-size: var(--lg);
+    font-weight: bold;
+}
+
+
+
+
 @media (min-width: 641px) {
     .mobileMenu {
         display: none;
@@ -196,4 +288,11 @@ nav{
     .desktopMenu {
         display: none;
     }
+    .productDetails {
+        width: 100%;
+    }
+}
+
+.inactive{
+    display: none;
 }
