@@ -184,16 +184,17 @@ nav{
     right: 0;
     border-bottom-left-radius: 1rem;
 }
-.primaryButton{
+.productDetails .primaryButton{
     background-color: var(--hospitalGreen);
     border-radius: 0.8rem;
     border: none;
     color: var(--white);
-    width: 100%;
+    width: 85%;
     height: 5rem;
     cursor: pointer;
     font-size: var(--md);
     font-weight: bold;
+    align-self: center;
 }
 .myOrderContent, .orderContainer, .buttonContainer{
     display: flex;
@@ -307,9 +308,79 @@ nav{
     margin-bottom: 0;
     color: var(--veryLightPink);
 }
-.productInfo div p:nth-child(2):hover{
+
+
+
+
+/****** Detalles del producto *******/
+.productDetailsAside{
+    background-color: var(--white);
+    border-bottom-left-radius: 1rem;
+    width: 36rem;
+    padding-bottom: 2.5rem;
+    position: absolute;
+    right: 0;
+}
+.primaryButton{
+    background-color: var(--hospitalGreen);
+    border-radius: 0.8rem;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    height: 5rem;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+}
+.addToCartButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.productDetailsAside .producDetails__close{
+    background-color: var(--white);
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    top: 1.2rem;
+    left: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.productDetailsAside .producDetails__close:hover{
     cursor: pointer;
 }
+.productDetailsAside > .producDetails__img {
+    width: 100%;
+    height: 36rem;
+    object-fit: cover;
+    border-radius: 0 0 10rem 0;
+}
+.productInfoAside{
+    margin: 0 2rem;
+}
+.productInfoAside p:nth-child(1){
+    font-weight: bold;
+    font-size: var(--md);
+    margin: 2.5rem 0 0.5rem 0;
+}
+.productInfoAside p:nth-child(2){
+    font-weight: 500;
+    font-size: var(--md);
+    color: var(--veryLightPink);
+    margin: 0 0 2rem 0;
+}
+.productInfoAside p:nth-child(3){
+    font-weight: 300;
+    font-size: var(--sm);
+    margin: 0 0 1rem 0;
+    color: var(--black);
+}
+
+
 
 
 @media (min-width: 641px) {
@@ -358,8 +429,13 @@ nav{
         border-radius: 2rem;
     }
 
+    
+    .productDetailsAside {
+        width: 100%;
+    }
 }
 
+
 .inactive{
-    display: none;
+    display: none
 }
