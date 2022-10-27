@@ -144,6 +144,7 @@ nav{
     padding: 2.4rem;
     position: absolute;
     top: 6rem;
+    width: 75%;
     }
 .mobileMenu a{
     text-decoration: none;
@@ -170,15 +171,18 @@ nav{
     }
 
 
+
+
 /****** Aside, Shopping Cart ******/
 .productDetails{
     background-color: var(--white);
     display: grid;
     grid-template-rows: auto 1fr auto auto;
     width: 36rem;
-    height: 75vh;
+    height: 80vh;
     position: absolute;
     right: 0;
+    border-bottom-left-radius: 1rem;
 }
 .primaryButton{
     background-color: var(--hospitalGreen);
@@ -194,7 +198,9 @@ nav{
 .myOrderContent, .orderContainer, .buttonContainer{
     display: flex;
     flex-direction: column;
-    margin: 0 2rem;
+}
+.buttonContainer{
+    margin-bottom: 2rem;
 }
 .shoppingCard{
     display: grid;
@@ -202,6 +208,7 @@ nav{
     gap: 1.6rem;
     margin-bottom: 1rem;
     margin-right: 0.8rem;
+    margin-left: 0.8rem;
     align-items: center;
 }
 .shoppingCard figure img{
@@ -219,9 +226,6 @@ nav{
 }
 .shoppingCard > img:hover{
     cursor: pointer;
-}
-.orderContainer {
-    margin-top: 2rem;
 }
 .order{
     display: grid;
@@ -261,6 +265,53 @@ nav{
 
 
 
+/* Main Products */
+.cardsContainer{
+    --cardSize: 24rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--cardSize));
+    gap: 2.6rem;
+    place-content: center;
+    place-items: center;
+    margin-top: 1.5rem;
+}
+.productCard{
+    width: var(--cardSize);
+}
+.productCard img{
+    width: 100%;
+    height: 24rem;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+.productCard img:hover{
+    cursor: pointer;
+}
+.productInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.productInfo figure img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.productInfo div p:nth-child(1){
+    font-weight: bold;
+    font-size: var(--md);
+    margin-bottom: 0.5rem;
+}
+.productInfo div p:nth-child(2){
+    font-size: var(--sm);
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--veryLightPink);
+}
+.productInfo div p:nth-child(2):hover{
+    cursor: pointer;
+}
+
+
 @media (min-width: 641px) {
     .mobileMenu {
         display: none;
@@ -291,6 +342,22 @@ nav{
     .productDetails {
         width: 100%;
     }
+
+    
+    .cardsContainer{
+        --cardSize: 14rem;
+        grid-template-columns: repeat(auto-fill, minmax(var(--cardSize), 1fr));
+        gap: 1rem;
+    }
+    .productCard{
+        width: var(--cardSize);
+    }
+    .productCard img{
+        width: var(--cardSize);
+        height: var(--cardSize);
+        border-radius: 2rem;
+    }
+
 }
 
 .inactive{
