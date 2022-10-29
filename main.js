@@ -3,80 +3,95 @@ const mobileMenu = document.querySelector('.mobileMenu');
 const shoppingCart = document.querySelector('.productDetails')
 const cardsContainer = document.querySelector('.cardsContainer') // Clase para iterar array de productos.
 const productDetailsAside = document.querySelector('.productDetailsAside')
+const oscurecer = document.querySelector('.oscurecer')
 
 /* Botones */
 const menuEmail = document.querySelector('.navbarEmail');
 const burgerMenu = document.querySelector('.burgerMenu');
 const myOrderMenu = document.querySelector('.navbarShoppingCart');
 const btnProducDetailsClose = document.querySelector('.producDetails__close');
+const btnMyOrderMenuClose = document.querySelector('.btnMyOrderMenuClose')
 
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burgerMenu.addEventListener('click', toggleMobileMenu);
 myOrderMenu.addEventListener('click', toggleMyOrderMenu);
 btnProducDetailsClose.addEventListener('click', producDetailsClose);
-
+oscurecer.addEventListener('click', clickOnOscurecer);
+btnMyOrderMenuClose.addEventListener('click', myOrderClose);
 
 function toggleDesktopMenu() {
-    const isShoppingCartOpen = shoppingCart.classList.contains('inactive')
-    const isDetailsProductsOpen = productDetailsAside.classList.contains('inactive')
-
-    if (!isShoppingCartOpen) {
-        shoppingCart.classList.add('inactive')
-    } else if (!isDetailsProductsOpen){
-        productDetailsAside.classList.add('inactive')
-    } // Validamos si la variable shoppingCart tiene la clase inactive (si no es asi entonces se la agregamos.)
+    productDetailsAside.classList.add('inactive');
+    shoppingCart.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
     desktopMenu.classList.toggle('inactive'); // toggle = El funcionamiento de toggle es cambiar en este caso la clase, la quita si la tiene puesta cuando hagamos click, o la agrega si no la tiene cuando hagamos click.
+
+    const isDesktopMenuClose = desktopMenu.classList.contains('inactive')
+
+    if (!isDesktopMenuClose) {
+        oscurecer.classList.remove('inactive');
+    } else {
+        oscurecer.classList.add('inactive');
+    }
 }
 function toggleMobileMenu() {
-    const isShoppingCartOpen = shoppingCart.classList.contains('inactive') 
-    const isDetailsProductsOpen = productDetailsAside.classList.contains('inactive')
-
-    if (!isShoppingCartOpen) {
-        shoppingCart.classList.add('inactive')
-    } else if (!isDetailsProductsOpen){
-        productDetailsAside.classList.add('inactive')
-    } // Validamos si la variable shoppingCart tiene la clase inactive (si no es asi entonces se la agregamos.)
-
+    shoppingCart.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+    productDetailsAside.classList.add('inactive');
     mobileMenu.classList.toggle('inactive');
+
+    const isMobileMenuClose = mobileMenu.classList.contains('inactive')
+
+    if (!isMobileMenuClose) {
+        oscurecer.classList.remove('inactive');
+    } else {
+        oscurecer.classList.add('inactive');
+    }
 }
 function toggleMyOrderMenu() {
-    const isMobileMenuOpen = mobileMenu.classList.contains('inactive')
-    const isMenuEmailOpen = menuEmail.classList.contains('inactive')
-    const isDetailsProductsOpen = productDetailsAside.classList.contains('inactive')
-
-    if (!isMobileMenuOpen) {
-        mobileMenu.classList.add ('inactive');
-    } else if (!isMenuEmailOpen) {
-        desktopMenu.classList.add ('inactive');
-    }
-    
-    if (!isDetailsProductsOpen){
-        productDetailsAside.classList.add('inactive')
-    }
-
+    desktopMenu.classList.add ('inactive');
+    mobileMenu.classList.add ('inactive');
+    productDetailsAside.classList.add('inactive')
     shoppingCart.classList.toggle('inactive');
+
+    const isMyOrderMenuClose = shoppingCart.classList.contains('inactive')
+
+    if (!isMyOrderMenuClose) {
+        oscurecer.classList.remove('inactive');
+    } else {
+        oscurecer.classList.add('inactive');
+    }
 }
 function OpenProductDetailsAside() {
-    const isShoppingCartOpen = shoppingCart.classList.contains('inactive') 
-    const isMobileMenuOpen = mobileMenu.classList.contains('inactive')
-    const isMenuEmailOpen = menuEmail.classList.contains('inactive')
+    shoppingCart.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+    productDetailsAside.classList.toggle('inactive');
 
-    if (!isShoppingCartOpen) {
-        shoppingCart.classList.add('inactive')
-    } else if (!isMobileMenuOpen) {
-        mobileMenu.classList.add ('inactive');
-    } else if (!isMenuEmailOpen) {
-        desktopMenu.classList.add ('inactive');
-    } else{
-        return
+    const isProductDetailsAsideClose = productDetailsAside.classList.contains('inactive')
+
+    if (!isProductDetailsAsideClose) {
+        oscurecer.classList.remove('inactive');
+    } else {
+        oscurecer.classList.add('inactive');
     }
-
-    productDetailsAside.classList.remove('inactive')
 }
 function producDetailsClose() {
     productDetailsAside.classList.add('inactive')
+    oscurecer.classList.add('inactive');
 }
+function clickOnOscurecer() {
+    shoppingCart.classList.add('inactive');
+    mobileMenu.classList.add('inactive');
+    desktopMenu.classList.add('inactive');
+    productDetailsAside.classList.add('inactive');
+    oscurecer.classList.add('inactive');
+}
+function myOrderClose() {
+    shoppingCart.classList.add('inactive')
+    oscurecer.classList.add('inactive');
+}
+
 
 
 // Lista de productos a partir de un array
@@ -125,6 +140,11 @@ productsList.push({
     name: 'PC',
     price: 1200,
     image: 'https://blog.seccionamarilla.com.mx/wp-content/uploads/2020/06/pc-gamer-barata-partes-y-ycaracteristicas-770x578.jpg',
+})
+productsList.push({
+    name: 'Iphone X',
+    price: 800,
+    image: 'https://www.apple.com/newsroom/images/product/iphone/standard/iPhone_X_family_line_up_big.jpg.large.jpg',
 })
 
 function renderProducts(arr) {
