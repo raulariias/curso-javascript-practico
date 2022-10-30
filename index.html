@@ -19,7 +19,7 @@
     <div class="oscurecer inactive">
     </div>
     
-    <nav>
+    <nav>   
         <img src="./assets/Icons/icon_menu.svg" alt="menu" class="burgerMenu">
 
         <div class="navbarLeft">
@@ -39,7 +39,7 @@
                 <li class="navbarEmail">correo@example.com</li>
                 <li class="navbarShoppingCart">
                     <img src="./assets/Icons/icon_shopping_cart.svg" alt="Shopping Cart">
-                    <div>2</div>
+                    <div class="nCarrito">0</div>
                 </li>
             </ul>
         </div>
@@ -81,41 +81,16 @@
 
 
         <div class="myOrderContent">
-            <div class="shoppingCard">
-                <figure>
-                    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike">
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src="./assets/Icons/icon_close.png" alt="Quitar">
-            </div>
 
-            <div class="shoppingCard">
+            <!-- <div class="shoppingCard">
                 <figure>
                     <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike">
                 </figure>
                 <p>Bike</p>
-                <p>$30,00</p>
+                <p>$30.00</p>
                 <img src="./assets/Icons/icon_close.png" alt="Quitar">
-            </div>
+            </div> -->
 
-            <div class="shoppingCard">
-                <figure>
-                    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike">
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src="./assets/Icons/icon_close.png" alt="Quitar">
-            </div>
-
-            <div class="shoppingCard">
-                <figure>
-                    <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike">
-                </figure>
-                <p>Bike</p>
-                <p>$30,00</p>
-                <img src="./assets/Icons/icon_close.png" alt="Quitar">
-            </div>
         </div>
 
         <div class="orderContainer">
@@ -123,7 +98,7 @@
                 <p>
                     <span>Total</span>
                 </p>
-                <p>$560.00</p>
+                <p>$ <span class="total"></span></p>
             </div>
         </div>
 
@@ -136,13 +111,15 @@
         <div class="producDetails__close">
             <img src="./assets/Icons/icon_close.png" alt="Close">
         </div>
-        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike" class="producDetails__img">
-        <div class="productInfoAside">
-            <p>$120,00</p>
-            <p>Bike</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, consectetur quis. Vitae, reprehenderit. Animi, ducimus molestias expedita rem doloremque autem repellat magni inventore soluta, ratione totam deleniti mollitia? Consequatur, quo.</p>
-            <button class="primaryButton addToCartButton"><img src="./assets/Icons/bt_add_to_cart.svg" alt="Add to cart">Add to cart</button>
+        <div id="productAsideContainer">
+            <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike" class="producDetails__img">
+            <div class="productInfoAside">
+                <p>$120,00</p>
+                <p>Bike</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, consectetur quis. Vitae, reprehenderit. Animi, ducimus molestias expedita rem doloremque autem repellat magni inventore soluta, ratione totam deleniti mollitia? Consequatur, quo.</p>
+            </div>
         </div>
+        <button class="primaryButton addToCartButton"><img src="./assets/Icons/bt_add_to_cart.svg" alt="Add to cart">Add to cart</button>
     </aside>
 
     <section class="mainContainer">

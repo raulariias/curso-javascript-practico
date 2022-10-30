@@ -207,6 +207,9 @@ nav{
     font-weight: bold;
     align-self: center;
 }
+.myOrderContent{
+    overflow-y: scroll;
+}
 .myOrderContent, .orderContainer, .buttonContainer{
     display: flex;
     flex-direction: column;
@@ -330,6 +333,8 @@ nav{
     width: 36rem;
     padding-bottom: 2.5rem;
     position: absolute;
+    display: flex;
+    flex-direction: column;
     right: 0;
 }
 .primaryButton{
@@ -348,6 +353,8 @@ nav{
     align-items: center;
     justify-content: center;
     margin-top: 5rem;
+    width: 80%;
+    align-self: center;
 }
 .productDetailsAside .producDetails__close{
     background-color: var(--white);
@@ -364,7 +371,7 @@ nav{
 .productDetailsAside .producDetails__close:hover{
     cursor: pointer;
 }
-.productDetailsAside > .producDetails__img {
+.productDetailsAside .producDetails__img {
     width: 100%;
     height: 36rem;
     object-fit: cover;

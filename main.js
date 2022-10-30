@@ -68,7 +68,7 @@ function OpenProductDetailsAside() {
     desktopMenu.classList.add('inactive');
     productDetailsAside.classList.toggle('inactive');
 
-    const isProductDetailsAsideClose = productDetailsAside.classList.contains('inactive')
+    const isProductDetailsAsideClose = productDetailsAside.classList.contains('inactive');
 
     if (!isProductDetailsAsideClose) {
         oscurecer.classList.remove('inactive');
@@ -96,56 +96,14 @@ function myOrderClose() {
 
 // Lista de productos a partir de un array
 const productsList = [];
-productsList.push({
-    name: 'Bike',
-    price: 120,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-})
-productsList.push({
-    name: 'Car',
-    price: 4500,
-    image: 'https://cnnespanol.cnn.com/wp-content/uploads/2021/11/210922163312-04-lucid-air-electric-cars-full-169.jpg?quality=100&strip=info',
-})
-productsList.push({
-    name: 'PC',
-    price: 1200,
-    image: 'https://blog.seccionamarilla.com.mx/wp-content/uploads/2020/06/pc-gamer-barata-partes-y-ycaracteristicas-770x578.jpg',
-})
-productsList.push({
-    name: 'Bike',
-    price: 120,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-})
-productsList.push({
-    name: 'Car',
-    price: 4500,
-    image: 'https://cnnespanol.cnn.com/wp-content/uploads/2021/11/210922163312-04-lucid-air-electric-cars-full-169.jpg?quality=100&strip=info',
-})
-productsList.push({
-    name: 'PC',
-    price: 1200,
-    image: 'https://blog.seccionamarilla.com.mx/wp-content/uploads/2020/06/pc-gamer-barata-partes-y-ycaracteristicas-770x578.jpg',
-})
-productsList.push({
-    name: 'Bike',
-    price: 120,
-    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-})
-productsList.push({
-    name: 'Car',
-    price: 4500,
-    image: 'https://cnnespanol.cnn.com/wp-content/uploads/2021/11/210922163312-04-lucid-air-electric-cars-full-169.jpg?quality=100&strip=info',
-})
-productsList.push({
-    name: 'PC',
-    price: 1200,
-    image: 'https://blog.seccionamarilla.com.mx/wp-content/uploads/2020/06/pc-gamer-barata-partes-y-ycaracteristicas-770x578.jpg',
-})
-productsList.push({
-    name: 'Iphone X',
-    price: 800,
-    image: 'https://www.apple.com/newsroom/images/product/iphone/standard/iPhone_X_family_line_up_big.jpg.large.jpg',
-})
+
+for (let index = 30; index > productsList.length; index--) {
+    productsList.push({
+        name: 'Bike',
+        price: 30,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    })
+}
 
 function renderProducts(arr) {
     for (const product of productsList) {
@@ -156,7 +114,7 @@ function renderProducts(arr) {
     
         const productImg = document.createElement('img');
         productImg.setAttribute('src', product.image);
-        productImg.addEventListener('click', OpenProductDetailsAside)
+        productImg.addEventListener('click', OpenProductDetailsAside);
     
         const productInfo = document.createElement('div');
         productInfo.classList.add('productInfo');
@@ -164,15 +122,16 @@ function renderProducts(arr) {
         const productInfoDiv = document.createElement('div')
     
         const price = document.createElement('p')
-        price.innerHTML = '$' + product.price
+        price.innerText = '$' + product.price
     
         const name = document.createElement('p')
-        name.innerHTML = product.name;
+        name.innerText = product.name;
     
         const productInfoFigure = document.createElement('figure')
     
         const figureImg = document.createElement('img')
         figureImg.setAttribute('src', './assets/Icons/bt_add_to_cart.svg')
+        figureImg.addEventListener('click', agregarAlCarrito)
     
         // Iterando HTML
     
@@ -185,5 +144,44 @@ function renderProducts(arr) {
         cardsContainer.appendChild(productCard)
     }
 }
-
 renderProducts(productsList);
+
+const nCarrito = document.querySelector('.nCarrito');
+const myOrderContainer = document.querySelector('.myOrderContent');
+const shoppingTotal = document.querySelector('.total');
+let total = 0;
+function agregarAlCarrito() {
+    nCarrito.innerText++
+
+    const shoppingCardDiv = document.createElement('div')
+    shoppingCardDiv.classList.add('shoppingCard')
+
+    const figureShopping = document.createElement('figure')
+    const figureImg = document.createElement('img')
+    figureImg.setAttribute('src', 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+
+    const name = document.createElement('p')
+    name.innerText = 'Bike'
+
+    const price = document.createElement('p')
+    price.innerText = '$ ' + 30
+
+    const equis = document.createElement('img')
+    equis.setAttribute('src', './assets/Icons/icon_close.png')
+
+    shoppingCardDiv.append(figureShopping, name, price, equis)
+    figureShopping.appendChild(figureImg)
+    myOrderContainer.appendChild(shoppingCardDiv)
+
+    total += 30
+
+    shoppingTotal.innerText = total
+}
+/*<div class="shoppingCard">
+    <figure>
+        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike">
+    </figure>
+    <p>Bike</p>
+    <p>$30.00</p>
+    <img src="./assets/Icons/icon_close.png" alt="Quitar">
+</div> */
