@@ -29,6 +29,36 @@ body{
     top: 0;
 }
 
+/* AVISO */
+.avisoContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000066;
+    z-index: 10;
+}
+.aviso {
+    width: 50%;
+    height: max-content;
+    background-color: var(--white);
+    border-radius: 2rem;
+    padding: 2rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+.aviso h2 {
+    margin-bottom: 1.5rem;
+}
+.aviso ul {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
 
 /********** NAVBAR ***********/
 nav{
@@ -180,7 +210,6 @@ nav{
     color: var(--hospitalGreen);
     font-size: var(--sm);
     }
-
 
 
 
@@ -409,6 +438,9 @@ nav{
 
 
 @media (max-width: 640px) {
+    .aviso{
+        width: 29rem;
+    }
     .burgerMenu {
         display: block;
         width: 2.5rem;
@@ -456,4 +488,14 @@ nav{
 
 .inactive{
     display: none
+}
+.onscroll{
+    position: fixed;
+    top: 0;
+}
+.ochoRem{
+    margin-top: 8rem;
+}
+.seisRem{
+    margin-top: 6rem;
 }

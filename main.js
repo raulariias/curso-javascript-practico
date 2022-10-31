@@ -4,6 +4,9 @@ const shoppingCart = document.querySelector('.productDetails')
 const cardsContainer = document.querySelector('.cardsContainer') // Clase para iterar array de productos.
 const productDetailsAside = document.querySelector('.productDetailsAside')
 const oscurecer = document.querySelector('.oscurecer')
+const avisoContainer = document.querySelector('.avisoContainer')
+const navbar = document.querySelector('.navbar')
+const main = document.querySelector('.mainContainer')
 
 /* Botones */
 const menuEmail = document.querySelector('.navbarEmail');
@@ -12,6 +15,14 @@ const myOrderMenu = document.querySelector('.navbarShoppingCart');
 const btnProducDetailsClose = document.querySelector('.producDetails__close');
 const btnMyOrderMenuClose = document.querySelector('.btnMyOrderMenuClose')
 
+window.addEventListener('scroll', navfixed)
+function navfixed() {
+    navbar.classList.add('onscroll')
+    shoppingCart.classList.add('onscroll', 'seisRem')
+    main.classList.add('ochoRem')
+    productDetailsAside.classList.add('onscroll', 'seisRem')
+    console.log('sadasd');
+}
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burgerMenu.addEventListener('click', toggleMobileMenu);
@@ -19,7 +30,11 @@ myOrderMenu.addEventListener('click', toggleMyOrderMenu);
 btnProducDetailsClose.addEventListener('click', producDetailsClose);
 oscurecer.addEventListener('click', clickOnOscurecer);
 btnMyOrderMenuClose.addEventListener('click', myOrderClose);
+avisoContainer.addEventListener('click', cerrarAviso)
 
+function cerrarAviso() {
+    avisoContainer.classList.add('inactive')
+}
 function toggleDesktopMenu() {
     productDetailsAside.classList.add('inactive');
     shoppingCart.classList.add('inactive');
@@ -93,7 +108,6 @@ function myOrderClose() {
 }
 
 
-
 // Lista de productos a partir de un array
 const productsList = [];
 
@@ -148,13 +162,15 @@ renderProducts(productsList);
 
 const nCarrito = document.querySelector('.nCarrito');
 const myOrderContainer = document.querySelector('.myOrderContent');
-const shoppingTotal = document.querySelector('.total');
+const priceTotal = document.querySelector('.total');
 let total = 0;
+let shoppingCardG = [];
 function agregarAlCarrito() {
     nCarrito.innerText++
 
     const shoppingCardDiv = document.createElement('div')
     shoppingCardDiv.classList.add('shoppingCard')
+    shoppingCardG.push(shoppingCardDiv)
 
     const figureShopping = document.createElement('figure')
     const figureImg = document.createElement('img')
@@ -168,6 +184,7 @@ function agregarAlCarrito() {
 
     const equis = document.createElement('img')
     equis.setAttribute('src', './assets/Icons/icon_close.png')
+    equis.addEventListener('click', removeItem)
 
     shoppingCardDiv.append(figureShopping, name, price, equis)
     figureShopping.appendChild(figureImg)
@@ -175,13 +192,11 @@ function agregarAlCarrito() {
 
     total += 30
 
-    shoppingTotal.innerText = total
+    priceTotal.innerText = total
 }
-/*<div class="shoppingCard">
-    <figure>
-        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Bike">
-    </figure>
-    <p>Bike</p>
-    <p>$30.00</p>
-    <img src="./assets/Icons/icon_close.png" alt="Quitar">
-</div> */
+function removeItem() {
+    myOrderContainer.removeChild(shoppingCardG.pop())
+    total -= 30
+    priceTotal.innerText = total
+    nCarrito.innerText--
+}
