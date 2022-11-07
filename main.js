@@ -21,6 +21,7 @@ function navfixed() {
     shoppingCart.classList.add('onscroll', 'seisRem')
     main.classList.add('ochoRem')
     productDetailsAside.classList.add('onscroll', 'seisRem')
+    avisoContainer.classList.add('inactive')
     console.log('sadasd');
 }
 
